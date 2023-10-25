@@ -1,0 +1,43 @@
+<!-- Complete project details: https://randomnerdtutorials.com/esp8266-nodemcu-web-server-websocket-sliders/ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UC SumoBot Wifi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="topnav">
+        <h1>UC SumoBot Wifi</h1>
+    </div>
+    <div class="content">
+        <div class="card-grid">
+            <div class="card">
+                <p class="card-title">Speed: <span id="sliderValue1"></span> &percnt;</p>
+                <p class="switch">
+                    <input type="range" onchange="updateSliderPWM(this)" id="slider1" min="-100" max="100" step="1" value ="0" class="slider">
+                </p>
+                <p class="state">
+                    <input type="button" class="btn-stop" onclick="stopMotors(1)" value="Stop">
+                </p>
+            </div>
+            <div class="card">
+                <div><p class="card-title">Rotation: <span id="sliderValue2"></span> </p></div>
+                <p class="switch">
+                    <input type="button" onclick="turn(1)" id="l_btn" class="left_btn" value="<<">  <input type="button" onclick="turn(2)" id="r_btn" class="right_btn" value=">>">
+                    <input type="hidden" id="slider2" value="0">
+                </p>
+                <p class="state">
+                    <input type="button" class="btn-stop" onclick="stopMotors(2)" value="Stop">
+                </p>
+            </div>
+        </div>
+    </div>
+    <p class="state">
+        <input type="button" class="btn-stop" onclick="stopcar()" value="Stop Car">
+    </p>
+    <script src="script.js"></script>
+</body>
+</html>
