@@ -1,1 +1,1 @@
-# Sumo_bot
+Pakai file yang bukan _old
